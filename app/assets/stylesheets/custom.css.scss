@@ -18,4 +18,25 @@
 }
 #home-container{
   margin-top: 25px;
+  margin-bottom: 25px;
 }
+.jumbotron {
+  background-image: asset-url('face.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 425px;
+}
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color:lightgray;
+}
+
+/* Other Classes for Page Styling */
+
+
