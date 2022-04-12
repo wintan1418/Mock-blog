@@ -10,5 +10,5 @@ validates :email,   presence: true,
                     length: { maximum: 25},
                     format:{ with: VALID_EMAIL_REGEX }
 
-
+has_secure_password
 end
