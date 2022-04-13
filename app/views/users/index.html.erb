@@ -1,5 +1,5 @@
 <h1 class="text-center mt-4">Prestigious Blogers</h1>
-<div class="flicker_pagination">
+<div class="flickr_pagination">
   <%= will_paginate @users, :container => false %>
 </div>
    
@@ -20,6 +20,9 @@
           <%= link_to "View profile", user, class: "btn btn-outline-success" %>
           <%= link_to "edit profile", edit_user_path(user), class: "btn btn-outline-primary" %>
          
+        </div>
+        <div class="flickr_pagination">
+             <%= will_paginate @users, :container => false %>
         </div>
         <div class="card-footer text-muted">
           <small> joined <%=time_ago_in_words( user.created_at)%> ago,
