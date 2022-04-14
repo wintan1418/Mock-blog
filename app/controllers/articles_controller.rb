@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
-
+  before_action :set_article, only: %i[ :show, :edit, :update, :destroy ]
+  before_action :require_user, except:[:show, :index]
   # GET /articles or /articles.json
   def index
     @articles = Article.paginate(page: params[:page], per_page: 5)
