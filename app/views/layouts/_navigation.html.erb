@@ -33,11 +33,11 @@
             Profile [<%= current_user?.username %>]
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "view your profile", user_path(current_user?), class: "dropdown_item"%>
-              <%= link_to "Edit your profile", edit_user_path(current_user?), class: "dropdown-item"%>
-            </div>
-        
-          </li>
+            <%= link_to "View your profile", user_path(current_user?), class: "dropdown-item" %>
+            <%= link_to "Edit your profile", edit_user_path(current_user?), class: "dropdown-item" %>
+            <%= link_to "Delete profile", user_path(current_user?), class: "dropdown-item text-danger", method: :delete, data: { confirm: "Are you sure?" } %> 
+          </div>
+        </li>
 
             <li class="nav-item">
       
