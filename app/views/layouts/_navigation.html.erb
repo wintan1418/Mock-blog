@@ -28,10 +28,15 @@
         
         <% if logged_in? %>
 
-            <li class="nav-item">
-          
-            <%= link_to current_user?.username, user_path(current_user?), class: "nav-link "%>
-
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Profile [<%= current_user?.username %>]
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "view your profile", user_path(current_user?), class: "dropdown_item"%>
+              <%= link_to "Edit your profile", edit_user_path(current_user?), class: "dropdown-item"%>
+            </div>
+        
           </li>
 
             <li class="nav-item">
