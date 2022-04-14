@@ -18,8 +18,9 @@
           <%= link_to gravatar_for(user, size:150), user %></h5>
           <p class="card-text"><%= pluralize(user.articles.count, "articles")  %></p>
           <%= link_to "View profile", user, class: "btn btn-outline-success" %>
-          <%= link_to "edit profile", edit_user_path(user), class: "btn btn-outline-primary" %>
-         
+          <% if logged_in? and user == current_user? %>
+              <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-outline-info" %>
+            <% end %>
         </div>
         <div class="flickr_pagination">
              <%= will_paginate @users, :container => false %>
