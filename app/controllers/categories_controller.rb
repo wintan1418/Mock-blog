@@ -19,12 +19,17 @@ class CategoriesController < ApplicationController
 end
 
 def update
+  @category = Category.find(params[:id])
   if @category.update(category_params)
-    flash[:notice] = "Your account information was successfully updated"
-    redirect_to @categories
+    flash[:notice] = "Category was successfully updated"
+    redirect_to @category
   else
     render 'edit'
   end
+end
+
+def edit
+@category = Category.find(params[:id])
 end
 
   def index
