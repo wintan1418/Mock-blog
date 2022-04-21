@@ -18,6 +18,15 @@ class CategoriesController < ApplicationController
   end
 end
 
+def update
+  if @category.update(category_params)
+    flash[:notice] = "Your account information was successfully updated"
+    redirect_to @categories
+  else
+    render 'edit'
+  end
+end
+
   def index
     @categories = Category.paginate(page: params[:page], per_page: 5)
   end
