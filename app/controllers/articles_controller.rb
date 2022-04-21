@@ -24,7 +24,6 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    byebug
     @article = Article.new(article_params)
     @article.user = current_user?
 
@@ -70,7 +69,7 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :string, :description, :text, catyegory_ids:[])
+      params.require(:article).permit(:title, :string, :description, :text, category_ids:[])
     end
 
     def require_same_user
